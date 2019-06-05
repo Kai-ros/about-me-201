@@ -1,0 +1,30 @@
+h1 {
+  color: darkred;
+  font-size: xx-large
+}
+
+ol {
+  color: cyan;
+  font-size: larger;
+}
+
+ul {
+  color: crimson
+}
+
+
+
+* {
+  outline: 1px darkmagenta solid;
+  background-color: darkblue;
+  font-family: Calibri, Geneva, Helvetica, sans-serif;
+}
+
+h1 {
+  color: darkred;
+  font-size: x-large
+}
+
+/* ol {
+  color: black
+} */
