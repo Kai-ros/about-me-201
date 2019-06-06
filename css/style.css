@@ -1,5 +1,28 @@
+
+* {
+  font-family: Calibri, Geneva, Helvetica, sans-serif;
+}
+
+#columns {
+  height: 100vh;
+}
+
+#leftBar {
+  float: left;
+  height: 100%;
+  width: 15%;
+  background-color:darkslategrey;
+}
+
+#contentSection {
+  float: right;
+  height: 100%;
+  width: 85%;
+  background-color: midnightblue;
+}
+
 h1 {
-  color: darkred;
+  color: darkmagenta;
   font-size: xx-large
 }
 
@@ -12,19 +35,24 @@ ul {
   color: crimson
 }
 
-
-
-* {
-  outline: 1px darkmagenta solid;
-  background-color: darkblue;
-  font-family: Calibri, Geneva, Helvetica, sans-serif;
+body, html {
+  margin:0;
+  background-color:darkslategrey;
+  height: 100%;
 }
 
-h1 {
-  color: darkred;
-  font-size: x-large
+header {
+  height: 125px;
+  width: 100%;
 }
 
-/* ol {
-  color: black
-} */
+footer {
+  height: 0vh;
+}
+
+
+
+/* 
+  Additional code utilized for floats pulled from: 
+  https://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/ 
+*/
