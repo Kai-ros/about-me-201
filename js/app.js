@@ -13,8 +13,11 @@
   Answer No
 */ 
 
-var correctAnswers = 0;
-var answerValidity = false;
+var correctAnswersTally = 0;
+var answer = false;
+var correctAnswers = ['y', 'n', 'y', 'n', 'n'];
+var promptReplies;
+var userAnswers = [];
 
 var promptQueries = [
   'Is Brandon a gamer boi?',
@@ -40,13 +43,13 @@ var incorrectAlertMessages = [
   'To be so wrong...how can such a thing even draw breath? Much less exist?'
 ];
 
-var nonsenseAlertMessages = [
-  'This is not the arena for frivolity...',
-  'Your path is one of folly and error.',
-  'You test the patience of powers cosmic...',
-  'I will sacrifice you to the ravening pit for your impudence.',
-  'Your soul will agony long after the stars have all grown cold.'
-];
+// var nonsenseAlertMessages = [
+//   'This is not the arena for frivolity...',
+//   'Your path is one of folly and error.',
+//   'You test the patience of powers cosmic...',
+//   'I will sacrifice you to the ravening pit for your impudence.',
+//   'Your soul will agony long after the stars have all grown cold.'
+// ];
 
 // Console log messages
 var correctConsoleLogMessages = [
@@ -75,50 +78,35 @@ var htmlTargets = [
   'query5Answer'
 ];
 
+var greetings = function(){
+  var username = prompt('Tell us your name.');
+};
 
-alert('Well met, entity. I will now pose you with queries about the being known as Brandon, as is my grand purview. You will respond in either an affirmative or a negative, in the form of a "yes" or a "no", "Y" and "n" may also be substituted for either of these choices. Your ultimate worth on the cosmic stage shall be weighed, measured, and decided...');
+alert(`Well met, ${username}. I will now pose you with queries about the being known as Brandon, as is my grand purview. You will respond in either an affirmative or a negative, in the form of a "yes" or a "no", "y" and "n" may also be substituted for either of these choices. Your ultimate worth on the cosmic stage shall be weighed, measured, and decided...`);
 
 
-for (var i = 0; i < 5; i++) {
-  var queryReplies = prompt(promptQueries[i]).toLowerCase();
-  document.getElementById(htmlTargets[i]).innerHTML = queryReplies;
+var initialFiveQuestions = function(){
+  for (var i = 0; i < promptQueries.length; i++) {
+    promptReplies = prompt(promptQueries[i]).toLowerCase();
+    userAnswers.push(promptReplies);
+    // document.getElementById(htmlTargets[i]).innerHTML = userAnswers[i];
+    // Check replies to the queries
+    console.log(userAnswers);
+    if (userAnswers[i] === correctAnswers[i]) {
 
-  // I would need a counter here to track which question is being shown to the page
-
-  switch (queryReplies) {
-  case  = 'yes', 'y':
-    queryReplies = true;
-    break;
-  case 'no', 'n':
-    queryReplies = true;
-    break; 
-  default:
-    break;
-  }
-  
-  // Check replies to the queries
-  if (queryReplies === true) {
-
-    // If they answer correctly
-    alert(correctAlertMessages[i]);
-    console.log(correctConsoleLogMessages[i]);
-    correctAnswers++;
-  }
-  else if (queryReplies === false) {
-
+      // If they answer correctly
+      alert(correctAlertMessages[i]);
+      console.log(correctConsoleLogMessages[i]);
+      correctAnswersTally++;
+      continue;
+    }
     // If they answer incorrectly.
     alert(incorrectAlertMessages[i]);
     console.log(incorrectConsoleLogMessages[i]);
   }
-  else {
-
-    // If they do anything else.
-    alert(nonsenseAlertMessages[i]);
-    console.log(nonsenseConsoleMessage);
-  }
 }
 
-
+initialFiveQuestions();
 
 
 
