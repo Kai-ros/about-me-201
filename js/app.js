@@ -78,40 +78,59 @@ var htmlTargets = [
   'query5Answer'
 ];
 
+var username;
 var greetings = function(){
-  var username = prompt('Tell us your name.');
+  username = prompt('Tell us your name.');
 };
+
+greetings();
+
 
 alert(`Well met, ${username}. I will now pose you with queries about the being known as Brandon, as is my grand purview. You will respond in either an affirmative or a negative, in the form of a "yes" or a "no", "y" and "n" may also be substituted for either of these choices. Your ultimate worth on the cosmic stage shall be weighed, measured, and decided...`);
 
 
-var initialFiveQuestions = function(){
-  for (var i = 0; i < promptQueries.length; i++) {
-    promptReplies = prompt(promptQueries[i]).toLowerCase();
-    userAnswers.push(promptReplies);
-    // document.getElementById(htmlTargets[i]).innerHTML = userAnswers[i];
-    // Check replies to the queries
-    console.log(userAnswers);
-    if (userAnswers[i] === correctAnswers[i]) {
+// var initialFiveQuestions = function(){
+//   for (var i = 0; i < promptQueries.length; i++) {
+//     promptReplies = prompt(promptQueries[i]).toLowerCase();
+//     userAnswers.push(promptReplies);
+//     // document.getElementById(htmlTargets[i]).innerHTML = userAnswers[i];
+//     // Check replies to the queries
+//     console.log(userAnswers);
+//     if (userAnswers[i] === correctAnswers[i]) {
 
-      // If they answer correctly
-      alert(correctAlertMessages[i]);
-      console.log(correctConsoleLogMessages[i]);
-      correctAnswersTally++;
+//       // If they answer correctly
+//       alert(correctAlertMessages[i]);
+//       console.log(correctConsoleLogMessages[i]);
+//       correctAnswersTally++;
+//       continue;
+//     }
+//     // If they answer incorrectly.
+//     alert(incorrectAlertMessages[i]);
+//     console.log(incorrectConsoleLogMessages[i]);
+//   }
+// }
+
+// initialFiveQuestions();
+
+
+var userGuess;
+
+var dreadedQuestionSix = function(){
+  for(var numGuesses = 0; numGuesses < 4; numGuesses++){
+    userGuess = prompt('What number is the sign of the beast?');
+    if(userGuess < 666){
+      alert('Too low! Guess again.');
+      continue;
+    } else if(userGuess > 666){
+      alert('Too high! Guess again.');
       continue;
     }
-    // If they answer incorrectly.
-    alert(incorrectAlertMessages[i]);
-    console.log(incorrectConsoleLogMessages[i]);
+    alert('Great guess!');
+    break;
   }
 }
 
-initialFiveQuestions();
-
-
-
-
-
+dreadedQuestionSix();
 
 
 
